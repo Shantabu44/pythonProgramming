@@ -1,0 +1,5 @@
+Aircraft X - 20, Y - -10
+Aircraft X - 20, Y - -20
+Aircraft X - 0, Y - -10
+Aircraft X - 0, Y - 20
+Aircraft X - -20, Y - 10

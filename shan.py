@@ -4,6 +4,10 @@ aircrafts = {
     "x": 567.888,
     "y": 895.11
 }
+f = open("exercise_1.txt", "w")
+f.write("X -" + str(aircrafts["x"]) + ", Y -" + str(aircrafts["y"]))
+f.close()
+
 print ("X -", aircrafts["x"], ", Y -", aircrafts["y"])
 multipleAircrafts = [{"x": 123.345, "y": 234.567},
                      {"x": 23.345, "y": 24.567},
@@ -51,7 +55,9 @@ aircraft.moveLeft()
 aircraft.moveLeft()
 aircraft.moveRight()
 print ("Aircraft X -", aircraft.x, ", Y -", aircraft.y)
-
+f = open("exercise_2.txt", "w")
+f.write("Aircraft X - " + str(aircraft.x) + ", Y - " + str(aircraft.y))
+f.close()
 # Exercise 3
 print ("\n\nExercise 3")
 
@@ -102,6 +108,13 @@ print ("Aircraft2 X -", aircraft2.x, ", Y -", aircraft2.y)
 print ("Aircraft3 X -", aircraft3.x, ", Y -", aircraft3.y)
 print ("Aircraft4 X -", aircraft4.x, ", Y -", aircraft4.y)
 print ("Aircraft5 X -", aircraft5.x, ", Y -", aircraft5.y)
+f = open("exercise_3.txt", "w")
+f.write("Aircraft X - " + str(aircraft1.x) + ", Y - " + str(aircraft1.y))
+f.write("\nAircraft X - " + str(aircraft2.x) + ", Y - " + str(aircraft2.y))
+f.write("\nAircraft X - " + str(aircraft3.x) + ", Y - " + str(aircraft3.y))
+f.write("\nAircraft X - " + str(aircraft4.x) + ", Y - " + str(aircraft4.y))
+f.write("\nAircraft X - " + str(aircraft5.x) + ", Y - " + str(aircraft5.y))
+f.close()
 
 # Exercise 4
 print ("\n\nExercise 4")
@@ -128,6 +141,10 @@ class AircraftNew(object):
 
 aircraftNew = AircraftNew()
 aircraftNew1 = AircraftNew(9, 9)
+f = open("exercise_4.txt", "w")
+f.write("Aircraft X - " + str(aircraftNew.x) + ", Y - " + str(aircraftNew.y))
+f.write("Aircraft X - " + str(aircraftNew1.x) + ", Y - " + str(aircraftNew1.y))
+f.close()
 print ("AircraftNew X -", aircraftNew.x, ", Y -", aircraftNew.y)
 print ("AircraftNew1 X -", aircraftNew1.x, ", Y -", aircraftNew1.y)
 
@@ -145,12 +162,16 @@ class Boeing_747(AircraftNew):  # inherits class AircraftNew
         self.yDes = yDes
 
     def printValues(self):
+        f = open("exercise_5.txt", "w")
+        f.write("Starting Point(" + str(self.xOrg) + "," + str(self.yOrg)+ ")")
+        f.write("\nEnding Point(" + str(self.xDes) + "," + str(self.yDes)+ ")")
+        f.close()
         print ("Starting Point(", self.xOrg, ",", self.yOrg, ")")
         print ("Ending Point(", self.xDes, ",", self.yDes, ")")
 
 
 Boeing_747_obj = Boeing_747(numpy.random.randint(2, 100), numpy.random.randint(2, 100),
-                            numpy.random.randint(2, 100),numpy.random.randint(2, 100))
+                            numpy.random.randint(2, 100), numpy.random.randint(2, 100))
 Boeing_747_obj.printValues()
 # Exercise 6
 print ("\n\nExercise 6")
@@ -193,11 +214,21 @@ class Aircraft_Aircraft(object):
         print ("Slope", self.slope)
         print ("b", self.b)
         print ("Equation(y= mx +b ) - y =", self.slope, "x +", self.b)
-
+        f = open("exercise_6.txt", "w")
+        f.write("Starting Point(" + str(self.xOrg) + "," + str(self.yOrg)+ ")")
+        f.write("\nEnding Point(" + str(self.xDes) + "," + str(self.yDes)+ ")")
+        f.write("\nSlope"+ str(self.slope))
+        f.write("\nb"+ str(self.b))
+        f.write("\nEquation(y= mx +b ) - y = "+str(self.slope)+"x + "+str(self.b))
+        f.close()
     def printPath(self):
+        f = open("exercise_6.txt", "a")
         for i in self.path:
             print ("Accelerating-", i)
+            f.write("\nAccelerating -" + str(i) )
+        f.write("We have arrived")
         print ("We have arrived")
+        f.close()
 
 
 a = Aircraft_Aircraft(12, 10, 17, 80)
